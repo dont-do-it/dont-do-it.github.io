@@ -2,7 +2,7 @@
 
 var serverTime = new Date();
 
-function updateDeaths() {
+function updateDeaths(updateFlag) {
     var total2015Suicides = 788000;
     var currentYearlyRate = 788000;
     var currentRatePerMinute = currentYearlyRate / 365 / 24 / 60;
@@ -10,37 +10,71 @@ function updateDeaths() {
     var newYears2015 = new Date("January 1, 2015, 00:00:00")
     var deathsSince = Math.ceil((serverTime.getTime() - newYears2015.getTime()) / 1000 / 60 * currentRatePerMinute);
     var totalDeaths = total2015Suicides + deathsSince;
-    $('#deaths').html(totalDeaths + " souls who have commited suicide,");
+    if(updateFlag) {
+        $('#deaths').html(totalDeaths + " souls who have commited suicide,");
+    }
     return totalDeaths
 }
 
-function updateFamily(totalDeaths) {
+function updateFamily(totalDeaths, updateFlag) {
     var familyMembersAffected = totalDeaths * 3;
-    $('#family').html(familyMembersAffected + " spouses, moms, dads, and siblings have lost their loved ones to suicide,");
+    if(updateFlag) {
+        $('#family').html(familyMembersAffected + " spouses, moms, dads, and siblings have lost their loved ones to suicide,");
+    }
     return familyMembersAffected;
 }
 
-function updateFriends(totalDeaths) {
+function updateFriends(totalDeaths, updateFlag) {
     var friendsAffected = totalDeaths * 5;
-    $('#friends').html(friendsAffected + " people lost their friend to suicide,");
+    if(updateFlag) {
+        $('#friends').html(friendsAffected + " people lost their friend to suicide,");
+    }
     return friendsAffected;
 }
 
-function updateBrokenHearts(totalDeaths, familyTotal, friendsTotal) {
+function updateBrokenHearts(totalDeaths, familyTotal, friendsTotal, updateFlag) {
     var brokenHearts = totalDeaths + familyTotal + friendsTotal;
-    $('#brokenHearts').html(brokenHearts + " broken hearts because of suicide.");
+    if(updateFlag) {
+        $('#brokenHearts').html(brokenHearts + " broken hearts because of suicide.");
+    }
     return brokenHearts
 }
 
 $(function() {
-    var newTotal = updateDeaths();
-    var newFamilyTotal = updateFamily(newTotal);
-    var newFriendsTotal = updateFriends(newTotal);
-    var newBrokenHeartsTotal = updateBrokenHearts(newTotal, newFamilyTotal, newFriendsTotal);
-    setInterval(updateDeaths, 1000);
-    setInterval(updateFamily(updateDeaths()), 1000);
-    setInterval(updateFriends(updateDeaths()), 1000);
-    setInterval(updateBrokenHearts(newTotal, newFamilyTotal, newFriendsTotal), 1000);
+    var newTotal = updateDeaths(true);
+    var newFamilyTotal = updateFamily(newTotal, true);
+    var newFriendsTotal = updateFriends(newTotal, true);
+    var newBrokenHeartsTotal = updateBrokenHearts(newTotal, newFamilyTotal, newFriendsTotal, true);
+
+    setInterval(function() {
+        newTotal = updateDeaths(false)
+        $('#deaths').html(newTotal + " souls who have commited suicide,");
+        console.log("test")
+    }, 1000)
+
+    setTimeout(function() {
+        setInterval(function() {
+            newFamilyTotal = updateFamily(newTotal, false)
+            $('#family').html(newFamilyTotal + " spouses, moms, dads, and siblings have lost their loved ones to suicide,");
+            console.log("famtest")
+        }, 1000);
+    }, 250);
+
+    setTimeout(function() {
+        setInterval(function() {
+            newFriendsTotal = updateFriends(newTotal, false)
+            $('#friends').html(newFriendsTotal + " people lost their friend to suicide,");
+            console.log("friendtest")
+        }, 1000);
+    }, 500);
+
+    setTimeout(function() {
+        setInterval(function() {
+            newBrokenHeartsTotal = updateBrokenHearts(newTotal, newFamilyTotal, newFriendsTotal, false)
+            $('#brokenHearts').html(newBrokenHeartsTotal+ " broken hearts because of suicide.");
+            console.log("brokenHeartTest")
+        }, 1000);
+    }, 750);
 });
 
 var paragraph = "If you know someone who is thinking about suicide, or someone you think MIGHT be thinking of suicide, do yourself a favor and ask them how they are doing. Worst case scenario, you're asking a friend how their day is. Best case? You might just save a life."
