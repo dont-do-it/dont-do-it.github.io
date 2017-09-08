@@ -49,14 +49,14 @@ $(function() {
     setInterval(function() {
         newTotal = updateDeaths(false)
         $('#deaths').html(newTotal + " souls who have commited suicide,");
-        console.log("test")
+        //console.log("test")
     }, 1000)
 
     setTimeout(function() {
         setInterval(function() {
             newFamilyTotal = updateFamily(newTotal, false)
             $('#family').html(newFamilyTotal + " spouses, moms, dads, and siblings have lost their loved ones to suicide,");
-            console.log("famtest")
+            //console.log("famtest")
         }, 1000);
     }, 250);
 
@@ -64,7 +64,7 @@ $(function() {
         setInterval(function() {
             newFriendsTotal = updateFriends(newTotal, false)
             $('#friends').html(newFriendsTotal + " people lost their friend to suicide,");
-            console.log("friendtest")
+            //console.log("friendtest")
         }, 1000);
     }, 500);
 
@@ -72,7 +72,7 @@ $(function() {
         setInterval(function() {
             newBrokenHeartsTotal = updateBrokenHearts(newTotal, newFamilyTotal, newFriendsTotal, false)
             $('#brokenHearts').html(newBrokenHeartsTotal+ " broken hearts because of suicide.");
-            console.log("brokenHeartTest")
+            //console.log("brokenHeartTest")
         }, 1000);
     }, 750);
 });
