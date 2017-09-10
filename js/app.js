@@ -48,33 +48,33 @@ $(function() {
 
     setInterval(function() {
         newTotal = updateDeaths(false)
-        $('#deaths').html(newTotal + " souls who have commited suicide,");
+        $('#deaths').html(newTotal);
         //console.log("test")
-    }, 1000)
+    }, 3000)
 
     setTimeout(function() {
         setInterval(function() {
             newFamilyTotal = updateFamily(newTotal, false)
-            $('#family').html(newFamilyTotal + " spouses, moms, dads, and siblings have lost their loved ones to suicide,");
+            $('#family').html(newFamilyTotal);
             //console.log("famtest")
-        }, 1000);
-    }, 250);
+        }, 3000);
+    }, 1000);
 
     setTimeout(function() {
         setInterval(function() {
             newFriendsTotal = updateFriends(newTotal, false)
-            $('#friends').html(newFriendsTotal + " people lost their friend to suicide,");
+            $('#friends').html(newFriendsTotal);
             //console.log("friendtest")
-        }, 1000);
-    }, 500);
+        }, 3000);
+    }, 2000);
 
     setTimeout(function() {
         setInterval(function() {
             newBrokenHeartsTotal = updateBrokenHearts(newTotal, newFamilyTotal, newFriendsTotal, false)
-            $('#brokenHearts').html(newBrokenHeartsTotal+ " broken hearts because of suicide.");
+            $('#brokenHearts').html(newBrokenHeartsTotal);
             //console.log("brokenHeartTest")
-        }, 1000);
-    }, 750);
+        }, 3000);
+    }, 2850);
 });
 
 var paragraph = "If you know someone who is thinking about suicide, or someone you think MIGHT be thinking of suicide, do yourself a favor and ask them how they are doing. Worst case scenario, you're asking a friend how their day is. Best case? You might just save a life."
