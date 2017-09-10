@@ -1,6 +1,7 @@
 .idea
 .DS_Store
 odometer-0.4.6/
+scss/
 # Build and Release Folders
 bin/
 bin-debug/
