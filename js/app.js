@@ -46,42 +46,46 @@ $(function() {
     var newFriendsTotal = updateFriends(newTotal, true);
     var newBrokenHeartsTotal = updateBrokenHearts(newTotal, newFamilyTotal, newFriendsTotal, true);
 
-    setInterval(function() {
-        newTotal = updateDeaths(false)
-        $('#deaths').html(newTotal);
-        //console.log("test")
-    }, 3000)
+    setTimeout(function() {
+        setInterval(function() {
+            newTotal = updateDeaths(false)
+            $('#deaths').html(newTotal);
+            //console.log("test")
+        }, 1000);
+    }, 0);
 
     setTimeout(function() {
         setInterval(function() {
             newFamilyTotal = updateFamily(newTotal, false)
             $('#family').html(newFamilyTotal);
             //console.log("famtest")
-        }, 3000);
-    }, 1000);
+        }, 1000);
+    }, 250);
 
     setTimeout(function() {
         setInterval(function() {
             newFriendsTotal = updateFriends(newTotal, false)
             $('#friends').html(newFriendsTotal);
             //console.log("friendtest")
-        }, 3000);
-    }, 2000);
+        }, 1000);
+    }, 500);
 
     setTimeout(function() {
         setInterval(function() {
             newBrokenHeartsTotal = updateBrokenHearts(newTotal, newFamilyTotal, newFriendsTotal, false)
             $('#brokenHearts').html(newBrokenHeartsTotal);
             //console.log("brokenHeartTest")
-        }, 3000);
-    }, 2850);
+        }, 1000);
+    }, 750);
 });
 
-var paragraph = "If you know someone who is thinking about suicide, or someone you think MIGHT be thinking of suicide, do yourself a favor and ask them how they are doing. Worst case scenario, you're asking a friend how their day is. Best case? You might just save a life."
+var paragraph1 = "If you are thinking of committing suicide, please take a moment and reconsider."
 
-$('#paragraph').text(paragraph)
+$('#paragraph1').text(paragraph1)
 
+var paragraph2 = "If you know someone who is thinking about suicide, or someone you think MIGHT be thinking of suicide, do yourself a favor and ask them how they are doing. Worst case scenario, you're asking a friend how their day is. Best case? You might just save a life."
 
+$('#paragraph2').text(paragraph2)
 
 // function updateTime() {
 //     serverTime = new Date(serverTime.getTime() + 1000);
