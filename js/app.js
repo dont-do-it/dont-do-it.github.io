@@ -79,7 +79,7 @@ $(function() {
     }, 750);
 });
 
-var paragraph1 = "If you are thinking of committing suicide, please reconsider. Listed below are resources available for you to find emotional refuge."
+var paragraph1 = "If you are thinking of committing suicide, please don't. Listed below are resources available for you to find emotional refuge."
 
 $('#paragraph1').text(paragraph1)
 
