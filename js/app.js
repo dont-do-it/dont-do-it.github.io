@@ -87,7 +87,7 @@ var paragraph2 = "If you know someone who is thinking about suicide, or someone 
 
 $('#paragraph2').text(paragraph2)
 
-var paragraph3 = "On June 20th, 2015, I found out that one of my closest friends had commited suicide. Even now when I reread the message, I still shudder in disbelief when I read the words 'Jesse passed away yesterday'. Even though some time has passed, I'm still processing the idea that he is no longer with us, and I think I will be spending the rest of my life wrapping my head around that fact. The most hurtful thing about the whole ordeal is that I actually knew he had suicidal tendencies, and that he was depressed, but didn't do anything about it. And because of that I can't help but to blame myself."
+var paragraph3 = "On June 20th, 2015, I found out that one of my closest friends had commited suicide. Even now when I reread the message, I still shudder in disbelief when I read the words 'Jesse passed away yesterday'. Even though some time has passed, I'm still processing the idea that he is no longer with us, and I think I will be spending the rest of my life wrapping my head around that fact. The most hurtful thing about the whole ordeal is that he actually confided in me about his suicidal tendencies and his depression, but I didn't do anything about it. And because of that I can't help but to blame myself."
 
 $('#paragraph3').text(paragraph3)
 
