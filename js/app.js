@@ -11,7 +11,7 @@ function updateDeaths(updateFlag) {
     var deathsSince = Math.ceil((serverTime.getTime() - newYears2015.getTime()) / 1000 / 60 * currentRatePerMinute);
     var totalDeaths = total2015Suicides + deathsSince;
     if(updateFlag) {
-        $('#deaths').html(totalDeaths + " souls who have commited suicide,");
+        $('#deaths').html(totalDeaths + " souls who commited suicide,");
     }
     return totalDeaths
 }
@@ -19,7 +19,7 @@ function updateDeaths(updateFlag) {
 function updateFamily(totalDeaths, updateFlag) {
     var familyMembersAffected = totalDeaths * 3;
     if(updateFlag) {
-        $('#family').html(familyMembersAffected + " spouses, moms, dads, and siblings have lost their loved ones to suicide,");
+        $('#family').html(familyMembersAffected + " spouses, moms, dads, and siblings who lost their loved ones to suicide,");
     }
     return familyMembersAffected;
 }
@@ -27,7 +27,7 @@ function updateFamily(totalDeaths, updateFlag) {
 function updateFriends(totalDeaths, updateFlag) {
     var friendsAffected = totalDeaths * 5;
     if(updateFlag) {
-        $('#friends').html(friendsAffected + " people lost their friend to suicide,");
+        $('#friends').html(friendsAffected + " people who lost their friend to suicide,");
     }
     return friendsAffected;
 }
