@@ -79,13 +79,21 @@ $(function() {
     }, 750);
 });
 
-var paragraph1 = "If you are thinking of committing suicide, please take a moment and reconsider. Listed below are resources available for you to find emotional refuge."
+var paragraph1 = "If you are thinking of committing suicide, please reconsider. Listed below are resources available for you to find emotional refuge."
 
 $('#paragraph1').text(paragraph1)
 
 var paragraph2 = "If you know someone who is thinking about suicide, or someone you think MIGHT be thinking of suicide, do yourself a favor and ask them how they are doing. Worst case scenario, you're asking a friend how their day is. Best case? You might just save a life."
 
 $('#paragraph2').text(paragraph2)
+
+var paragraph3 = "On June 20th, 2015, I found out that one of my closest friends had commited suicide. Even now when I reread the message, I still shudder in disbelief when I read the words 'Jesse passed away yesterday'. Even though some time has passed, I'm still processing the idea that he is no longer with us, and I think I will be spending the rest of my life wrapping my head around that fact. The most hurtful thing about the whole ordeal is that I actually knew he had suicidal tendencies, and that he was depressed, but didn't do anything about it. And because of that I can't help but to blame myself."
+
+$('#paragraph3').text(paragraph3)
+
+var paragraph4 = "This is why I have dedicated this website to Jesse and everyone who has commited suicide or is thinking about suicide, and from now on I will not let another person slip through my fingers like that. Moreover, I want to be able to spread this message to people all around because chances are you and everyone else knows someone who is suffering in the same way, and I truly believe that it is part of our biological and evolutionary responsibility to help them."
+
+$('#paragraph4').text(paragraph4)
 
 // function updateTime() {
 //     serverTime = new Date(serverTime.getTime() + 1000);
